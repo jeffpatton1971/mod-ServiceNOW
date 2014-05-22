@@ -8,7 +8,7 @@
         /// <summary>
         /// This function inserts a server into the ServiceNow CI Database
         /// </summary>
-        /// <param name="Credential">A credential object that gets passed to the soap client for authentication</param>
+        /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
         /// <param name="Server">An insert object that contains the data to be inserted into ServiceNOW</param>
         /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
         public static insertResponse NewServer(NetworkCredential Credential, insert Server)
@@ -26,6 +26,29 @@
                     response = client.insert(Server);
                 }
                 return response;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// Get one or more servers from ServiceNOW
+        /// </summary>
+        /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
+        /// <param name="Server">A getRecrods object that contains the data to be retreived from ServiceNOW</param>
+        /// <returns>A getRecordsResponseGetRecordsResult array of server(s)</returns>
+        public static getRecordsResponseGetRecordsResult[] GetServer(NetworkCredential Credential, getRecords Server)
+        {
+            try
+            {
+                string userName = Credential.UserName;
+                string userPass = Credential.Password;
+                ServiceNowSoapClient client = soapClient(userName, userPass);
+
+                getRecordsResponseGetRecordsResult[] result = client.getRecords(Server);
+
+                return result;
             }
             catch (Exception ex)
             {
