@@ -3,7 +3,7 @@
     //
     // This is the service reference
     //
-    using snCmdb;
+    using cmdb_ci_server;
     using System;
     using System.Net;
     public class Configuration

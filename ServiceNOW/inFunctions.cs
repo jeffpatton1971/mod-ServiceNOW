@@ -3,7 +3,7 @@
     //
     // This is the service reference
     //
-    using snIndb;
+    using incident;
     using System;
     using System.Net;
     public class Incident
