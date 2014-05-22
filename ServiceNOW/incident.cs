@@ -1,8 +1,5 @@
 ﻿namespace ServiceNOW
 {
-    //
-    // This is the service reference
-    //
     using incident;
     using System;
     using System.Net;

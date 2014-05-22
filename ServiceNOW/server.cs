@@ -1,8 +1,5 @@
 ﻿namespace ServiceNOW
 {
-    //
-    // This is the service reference
-    //
     using cmdb_ci_server;
     using System;
     using System.Net;
@@ -12,9 +9,9 @@
         /// This function inserts a server into the ServiceNow CI Database
         /// </summary>
         /// <param name="Credential">A credential object that gets passed to the soap client for authentication</param>
-        /// <param name="server">An insert object that contains the data to be inserted into ServiceNOW</param>
+        /// <param name="Server">An insert object that contains the data to be inserted into ServiceNOW</param>
         /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
-        public static insertResponse NewServer(NetworkCredential Credential, insert server)
+        public static insertResponse NewServer(NetworkCredential Credential, insert Server)
         {
             try
             {
@@ -24,9 +21,9 @@
 
                 insertResponse response = new insertResponse();
 
-                if (!(itemExist(client, server.name)))
+                if (!(itemExist(client, Server.name)))
                 {
-                    response = client.insert(server);
+                    response = client.insert(Server);
                 }
                 return response;
             }
@@ -39,18 +36,18 @@
         /// A private function used by NewServer for validation purposes.
         /// </summary>
         /// <param name="client">A ServiceNOW soapclient</param>
-        /// <param name="configurationItem">The name property of the item</param>
+        /// <param name="Name">The name property of the item</param>
         /// <returns>true if the item exists, false if it doesn't</returns>
-        private static bool itemExist(ServiceNowSoapClient client, string configurationItem)
+        private static bool itemExist(ServiceNowSoapClient client, string Name)
         {
             try
             {
                 getRecords gRecords = new getRecords();
-                gRecords.name = configurationItem;
+                gRecords.name = Name;
                 getRecordsResponseGetRecordsResult[] gResults = client.getRecords(gRecords);
                 foreach (getRecordsResponseGetRecordsResult gResult in gResults)
                 {
-                    if (gResult.name == configurationItem)
+                    if (gResult.name == Name)
                     {
                         //
                         // this item already exists
