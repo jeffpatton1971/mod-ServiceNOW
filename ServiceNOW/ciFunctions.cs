@@ -6,7 +6,7 @@
     using snCmdb;
     using System;
     using System.Net;
-    public class ciFunctions
+    public class Configuration
     {
         /// <summary>
         /// This function inserts a server into the ServiceNow CI Database

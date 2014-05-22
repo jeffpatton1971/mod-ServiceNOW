@@ -6,7 +6,7 @@
     using snIndb;
     using System;
     using System.Net;
-    public class inFunctions
+    public class Incident
     {
         /// <summary>
         /// This function creates a new incident in ServiceNOW
