@@ -30,6 +30,29 @@
             }
         }
         /// <summary>
+        /// Get one or more incidents from ServiceNOW
+        /// </summary>
+        /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
+        /// <param name="Incident">A getRecrods object that contains the data to be retreived from ServiceNOW</param>
+        /// <returns>A getRecordsResponseGetRecordsResult array of incidents</returns>
+        public static getRecordsResponseGetRecordsResult[] GetIncident(NetworkCredential Credential, getRecords Incident)
+        {
+            try
+            {
+                string userName = Credential.UserName;
+                string userPass = Credential.Password;
+                ServiceNowSoapClient client = soapClient(userName, userPass);
+
+                getRecordsResponseGetRecordsResult[] result = client.getRecords(Incident);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        /// <summary>
         /// A private function to create the soapclient to communicate with ServiceNOW
         /// </summary>
         /// <param name="UserName">The API Username</param>
