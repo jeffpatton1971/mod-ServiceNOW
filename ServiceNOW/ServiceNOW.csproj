@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ciFunctions.cs" />
-    <Compile Include="inFunctions.cs" />
+    <Compile Include="server.cs" />
+    <Compile Include="incident.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\cmdb_ci_server\Reference.cs">
       <AutoGen>True</AutoGen>
