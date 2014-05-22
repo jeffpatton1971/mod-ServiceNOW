@@ -12,7 +12,7 @@
         /// This function creates a new incident in ServiceNOW
         /// </summary>
         /// <param name="Credential">A credential object that gets passed to the soap client for authentication</param>
-        /// <param name="server">An insert object that contains the data to be inserted into ServiceNOW</param>
+        /// <param name="Incident">An insert object that contains the data to be inserted into ServiceNOW</param>
         /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
         public static insertResponse NewIncident(NetworkCredential Credential, insert Incident)
         {
