@@ -18,7 +18,7 @@
                 string userName = Credential.UserName;
                 string userPass = Credential.Password;
                 ServiceNowSoapClient client = soapClient(userName, userPass);
-
+                
                 insertResponse response = new insertResponse();
 
                 response = client.insert(Incident);
