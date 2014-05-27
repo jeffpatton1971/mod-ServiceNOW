@@ -1,4 +1,4 @@
-﻿namespace ServiceNOW
+﻿namespace mod_servicenow
 {
     using incident;
     using System;

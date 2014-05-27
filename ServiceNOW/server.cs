@@ -1,4 +1,4 @@
-﻿namespace ServiceNOW
+﻿namespace mod_servicenow
 {
     using cmdb_ci_server;
     using System;
