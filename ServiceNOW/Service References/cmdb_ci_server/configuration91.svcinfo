@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Fu9rjPJV3LjTQjn/5vFRbJG+73g=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="tFE3Y3iymKBdTkDJgkpWnQwEo3E=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceNowSoap2">
       <properties>
@@ -221,7 +221,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceNowSoap1" contract="cmdb_ci_server.ServiceNowSoap" bindingType="basicHttpBinding" address="https://kuitdev.service-now.com/cmdb_ci_server.do?SOAP" bindingConfiguration="ServiceNowSoap2">
+    <endpoint name="ServiceNowSoap" contract="cmdb_ci_server.ServiceNowSoap" bindingType="basicHttpBinding" address="https://kuitdev.service-now.com/cmdb_ci_server.do?SOAP" bindingConfiguration="ServiceNowSoap2">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://kuitdev.service-now.com/cmdb_ci_server.do?SOAP</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceNowSoap1</serializedValue>
+          <serializedValue>ServiceNowSoap</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

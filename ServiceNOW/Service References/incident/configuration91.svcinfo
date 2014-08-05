@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="9eTptI1KqbKeMLSnJRb8nzUV/i4=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Z/+Z1cqpNeLbM+pthZSojXTVBCw=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceNowSoap">
+    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceNowSoap1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceNowSoap</serializedValue>
+          <serializedValue>ServiceNowSoap1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceNowSoap1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="ServiceNowSoap4">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceNowSoap1</serializedValue>
+          <serializedValue>ServiceNowSoap4</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -221,7 +221,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceNowSoap" contract="incident.ServiceNowSoap" bindingType="basicHttpBinding" address="https://kuitdev.service-now.com/incident.do?SOAP" bindingConfiguration="ServiceNowSoap">
+    <endpoint name="ServiceNowSoap1" contract="incident.ServiceNowSoap" bindingType="basicHttpBinding" address="https://kuitdev.service-now.com/incident.do?SOAP" bindingConfiguration="ServiceNowSoap1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://kuitdev.service-now.com/incident.do?SOAP</serializedValue>
@@ -233,7 +233,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceNowSoap</serializedValue>
+          <serializedValue>ServiceNowSoap1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>incident.ServiceNowSoap</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceNowSoap</serializedValue>
+          <serializedValue>ServiceNowSoap1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
