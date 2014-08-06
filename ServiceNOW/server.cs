@@ -6,18 +6,18 @@
     public class Configuration
     {
         /// <summary>
-        /// This function inserts a server into the ServiceNow CI Database
+        /// 
         /// </summary>
-        /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
-        /// <param name="Server">An insert object that contains the data to be inserted into ServiceNOW</param>
-        /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
-        public static insertResponse NewServer(NetworkCredential Credential, insert Server)
+        /// <param name="Credential"></param>
+        /// <param name="Server"></param>
+        /// <param name="EndPoint"></param>
+        /// <param name="RemoteAddress"></param>
+        /// <returns></returns>
+        public static insertResponse NewServer(NetworkCredential Credential, insert Server, string EndPoint, string RemoteAddress)
         {
             try
             {
-                string userName = Credential.UserName;
-                string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(Credential, EndPoint, RemoteAddress);
 
                 insertResponse response = new insertResponse();
 
@@ -33,18 +33,18 @@
             }
         }
         /// <summary>
-        /// Get one or more servers from ServiceNOW
+        /// 
         /// </summary>
-        /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
-        /// <param name="Server">A getRecrods object that contains the data to be retreived from ServiceNOW</param>
-        /// <returns>A getRecordsResponseGetRecordsResult array of server(s)</returns>
-        public static getRecordsResponseGetRecordsResult[] GetServer(NetworkCredential Credential, getRecords Server)
+        /// <param name="Credential"></param>
+        /// <param name="Server"></param>
+        /// <param name="EndPoint"></param>
+        /// <param name="RemoteAddress"></param>
+        /// <returns></returns>
+        public static getRecordsResponseGetRecordsResult[] GetServer(NetworkCredential Credential, getRecords Server, string EndPoint, string RemoteAddress)
         {
             try
             {
-                string userName = Credential.UserName;
-                string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(Credential, EndPoint, RemoteAddress);
 
                 getRecordsResponseGetRecordsResult[] result = client.getRecords(Server);
 
@@ -90,18 +90,19 @@
             }
         }
         /// <summary>
-        /// A private function to create the soapclient to communicate with ServiceNOW
+        /// 
         /// </summary>
-        /// <param name="UserName">The API Username</param>
-        /// <param name="Password">The API Password</param>
-        /// <returns>A ServiceNow SoapClient object</returns>
-        private static ServiceNowSoapClient soapClient(string UserName, string Password)
+        /// <param name="Credential"></param>
+        /// <param name="EndPoint"></param>
+        /// <param name="RemoteAddress"></param>
+        /// <returns></returns>
+        private static ServiceNowSoapClient soapClient(NetworkCredential Credential, string EndPoint, string RemoteAddress)
         {
             try
             {
-                ServiceNowSoapClient soapClient = new ServiceNowSoapClient();
-                soapClient.ClientCredentials.UserName.UserName = UserName;
-                soapClient.ClientCredentials.UserName.Password = Password;
+                ServiceNowSoapClient soapClient = new ServiceNowSoapClient(EndPoint, RemoteAddress);
+                soapClient.ClientCredentials.UserName.UserName = Credential.UserName;
+                soapClient.ClientCredentials.UserName.Password = Credential.Password;
                 return soapClient;
             }
             catch (Exception ex)
