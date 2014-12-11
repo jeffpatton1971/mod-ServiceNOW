@@ -2,6 +2,7 @@
 {
     using System;
     using System.Net;
+    using System.ServiceModel;
     using snIncident;
     public class Incident
     {
@@ -11,13 +12,13 @@
         /// <param name="Credential">A credential object that gets passed to the soap client for authentication</param>
         /// <param name="Incident">An insert object that contains the data to be inserted into ServiceNOW</param>
         /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
-        public static insertResponse NewIncident(NetworkCredential Credential, insert Incident)
+        public static insertResponse NewIncident(NetworkCredential Credential, insert Incident, string ServiceNowUrl)
         {
             try
             {
                 string userName = Credential.UserName;
                 string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(userName, userPass, ServiceNowUrl);
 
                 insertResponse response = new insertResponse();
 
@@ -35,13 +36,13 @@
         /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
         /// <param name="Incident">A getRecrods object that contains the data to be retreived from ServiceNOW</param>
         /// <returns>A getRecordsResponseGetRecordsResult array of incidents</returns>
-        public static getRecordsResponseGetRecordsResult[] GetIncident(NetworkCredential Credential, getRecords Incident)
+        public static getRecordsResponseGetRecordsResult[] GetIncident(NetworkCredential Credential, getRecords Incident, string ServiceNowUrl)
         {
             try
             {
                 string userName = Credential.UserName;
                 string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(userName, userPass, ServiceNowUrl);
 
                 getRecordsResponseGetRecordsResult[] result = client.getRecords(Incident);
 
@@ -58,13 +59,14 @@
         /// <param name="UserName">The API Username</param>
         /// <param name="Password">The API Password</param>
         /// <returns>A ServiceNow SoapClient object</returns>
-        private static ServiceNowSoapClient soapClient(string UserName, string Password)
+        private static ServiceNowSoapClient soapClient(string UserName, string Password, string ServiceNowUrl)
         {
             try
             {
-                ServiceNowSoapClient soapClient = new ServiceNowSoapClient();
+                ServiceNowSoapClient soapClient = new ServiceNowSoapClient("ServiceNowSoap", ServiceNowUrl);
                 soapClient.ClientCredentials.UserName.UserName = UserName;
                 soapClient.ClientCredentials.UserName.Password = Password;
+
                 return soapClient;
             }
             catch (Exception ex)
