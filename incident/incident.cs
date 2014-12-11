@@ -63,7 +63,8 @@
         {
             try
             {
-                ServiceNowSoapClient soapClient = new ServiceNowSoapClient("ServiceNowSoap", ServiceNowUrl);
+                EndpointAddress endpoint = new EndpointAddress(new Uri(ServiceNowUrl));
+                ServiceNowSoapClient soapClient = new ServiceNowSoapClient("ServiceNowSoap", endpoint);
                 soapClient.ClientCredentials.UserName.UserName = UserName;
                 soapClient.ClientCredentials.UserName.Password = Password;
 

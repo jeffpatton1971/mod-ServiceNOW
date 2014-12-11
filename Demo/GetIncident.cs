@@ -19,7 +19,7 @@
             getRecords myIncident = new getRecords();
             myIncident.number = txtIncident.Text;
 
-            getRecordsResponseGetRecordsResult[] myIncidents = incident.Incident.GetIncident(Credential, myIncident);
+            getRecordsResponseGetRecordsResult[] myIncidents = incident.Incident.GetIncident(Credential, myIncident, txtUrl.Text);
             foreach (getRecordsResponseGetRecordsResult result in myIncidents)
             {
                 txtResult.Text += result.number + "\r\n";

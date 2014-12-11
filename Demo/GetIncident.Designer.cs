@@ -36,12 +36,14 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUrl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 83);
+            this.label1.Location = new System.Drawing.Point(11, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
@@ -49,28 +51,28 @@
             // 
             // txtIncident
             // 
-            this.txtIncident.Location = new System.Drawing.Point(60, 80);
+            this.txtIncident.Location = new System.Drawing.Point(62, 110);
             this.txtIncident.Name = "txtIncident";
             this.txtIncident.Size = new System.Drawing.Size(100, 20);
-            this.txtIncident.TabIndex = 2;
+            this.txtIncident.TabIndex = 3;
             // 
             // cmdGetIncident
             // 
-            this.cmdGetIncident.Location = new System.Drawing.Point(166, 78);
+            this.cmdGetIncident.Location = new System.Drawing.Point(168, 108);
             this.cmdGetIncident.Name = "cmdGetIncident";
             this.cmdGetIncident.Size = new System.Drawing.Size(75, 23);
-            this.cmdGetIncident.TabIndex = 3;
+            this.cmdGetIncident.TabIndex = 4;
             this.cmdGetIncident.Text = "Get";
             this.cmdGetIncident.UseVisualStyleBackColor = true;
             this.cmdGetIncident.Click += new System.EventHandler(this.cmdGetIncident_Click);
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(12, 119);
+            this.txtResult.Location = new System.Drawing.Point(14, 149);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(229, 198);
-            this.txtResult.TabIndex = 4;
+            this.txtResult.TabIndex = 5;
             // 
             // label2
             // 
@@ -105,11 +107,29 @@
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Url";
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(70, 63);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(100, 20);
+            this.txtUrl.TabIndex = 2;
+            // 
             // GetIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 329);
+            this.ClientSize = new System.Drawing.Size(259, 359);
+            this.Controls.Add(this.txtUrl);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUsername);
@@ -138,5 +158,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtUrl;
     }
 }

@@ -24,7 +24,7 @@
             newIncident.short_description = txtShortDescription.Text;
             newIncident.description = txtDescription.Text;
 
-            insertResponse response = incident.Incident.NewIncident(Credential, newIncident);
+            insertResponse response = incident.Incident.NewIncident(Credential, newIncident, txtUrl.Text);
             MessageBox.Show(response.number);
         }
     }

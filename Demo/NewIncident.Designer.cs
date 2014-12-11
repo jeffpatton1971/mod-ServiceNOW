@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.cmdSubmit = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtUrl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -72,12 +74,12 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 78);
+            this.label3.Location = new System.Drawing.Point(12, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 4;
@@ -85,15 +87,15 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(73, 75);
+            this.txtUser.Location = new System.Drawing.Point(73, 103);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
-            this.txtUser.TabIndex = 5;
+            this.txtUser.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 108);
+            this.label4.Location = new System.Drawing.Point(12, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 6;
@@ -101,15 +103,15 @@
             // 
             // txtShortDescription
             // 
-            this.txtShortDescription.Location = new System.Drawing.Point(15, 124);
+            this.txtShortDescription.Location = new System.Drawing.Point(15, 152);
             this.txtShortDescription.Name = "txtShortDescription";
             this.txtShortDescription.Size = new System.Drawing.Size(158, 20);
-            this.txtShortDescription.TabIndex = 7;
+            this.txtShortDescription.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 156);
+            this.label5.Location = new System.Drawing.Point(12, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 8;
@@ -117,27 +119,45 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(15, 172);
+            this.txtDescription.Location = new System.Drawing.Point(15, 200);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(158, 133);
-            this.txtDescription.TabIndex = 9;
+            this.txtDescription.TabIndex = 7;
             // 
             // cmdSubmit
             // 
-            this.cmdSubmit.Location = new System.Drawing.Point(98, 311);
+            this.cmdSubmit.Location = new System.Drawing.Point(98, 339);
             this.cmdSubmit.Name = "cmdSubmit";
             this.cmdSubmit.Size = new System.Drawing.Size(75, 23);
-            this.cmdSubmit.TabIndex = 10;
+            this.cmdSubmit.TabIndex = 6;
             this.cmdSubmit.Text = "Submit";
             this.cmdSubmit.UseVisualStyleBackColor = true;
             this.cmdSubmit.Click += new System.EventHandler(this.cmdSubmit_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Url";
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(73, 61);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(100, 20);
+            this.txtUrl.TabIndex = 3;
             // 
             // NewIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(185, 346);
+            this.ClientSize = new System.Drawing.Size(185, 374);
+            this.Controls.Add(this.txtUrl);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cmdSubmit);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label5);
@@ -171,5 +191,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button cmdSubmit;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtUrl;
     }
 }
