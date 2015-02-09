@@ -14,18 +14,25 @@
 
         private void cmdSubmit_Click(object sender, EventArgs e)
         {
-            NetworkCredential Credential = new NetworkCredential(txtUsername.Text, txtPassword.Text);
-            
-            insert newIncident = new insert();
-            newIncident.caller_id = txtUser.Text;
-            newIncident.opened_by = txtUser.Text;
-            newIncident.watch_list = txtUser.Text;
-            newIncident.contact_type = "Email";
-            newIncident.short_description = txtShortDescription.Text;
-            newIncident.description = txtDescription.Text;
+            try
+            {
+                NetworkCredential Credential = new NetworkCredential(txtUsername.Text, txtPassword.Text);
 
-            insertResponse response = incident.Incident.NewIncident(Credential, newIncident, txtUrl.Text);
-            MessageBox.Show(response.number);
+                insert newIncident = new insert();
+                newIncident.caller_id = txtUser.Text;
+                newIncident.opened_by = txtUser.Text;
+                newIncident.watch_list = txtUser.Text;
+                newIncident.contact_type = "Email";
+                newIncident.short_description = txtShortDescription.Text;
+                newIncident.description = txtDescription.Text;
+
+                insertResponse response = incident.Incident.NewIncident(Credential, newIncident, txtUrl.Text);
+                MessageBox.Show(response.number);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
