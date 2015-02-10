@@ -36,6 +36,8 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.cmdGetServer = new System.Windows.Forms.Button();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -89,7 +91,7 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(17, 87);
+            this.txtResult.Location = new System.Drawing.Point(17, 120);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(156, 130);
@@ -97,7 +99,7 @@
             // 
             // cmdGetServer
             // 
-            this.cmdGetServer.Location = new System.Drawing.Point(98, 226);
+            this.cmdGetServer.Location = new System.Drawing.Point(98, 256);
             this.cmdGetServer.Name = "cmdGetServer";
             this.cmdGetServer.Size = new System.Drawing.Size(75, 23);
             this.cmdGetServer.TabIndex = 7;
@@ -105,11 +107,29 @@
             this.cmdGetServer.UseVisualStyleBackColor = true;
             this.cmdGetServer.Click += new System.EventHandler(this.cmdGetServer_Click);
             // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(73, 88);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(100, 20);
+            this.txtUrl.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Url";
+            // 
             // GetServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(192, 261);
+            this.ClientSize = new System.Drawing.Size(192, 291);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.cmdGetServer);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.txtServer);
@@ -135,5 +155,7 @@
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button cmdGetServer;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -10,6 +10,9 @@
         public NewIncident()
         {
             InitializeComponent();
+            txtUrl.Text = Demo.snConfig.ServiceNOWUrl() + "/incident.do?SOAP";
+            txtUsername.Text = Demo.snConfig.snSoapUser;
+            txtPassword.Text = Demo.snConfig.snSoapPass;
         }
 
         private void cmdSubmit_Click(object sender, EventArgs e)

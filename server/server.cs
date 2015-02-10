@@ -2,6 +2,7 @@
 {
     using System;
     using System.Net;
+    using System.ServiceModel;
     using ciServer;
     public class Configuration
     {
@@ -11,13 +12,13 @@
         /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
         /// <param name="Server">An insert object that contains the data to be inserted into ServiceNOW</param>
         /// <returns>An insertResponse object containing data returned from ServiceNOW</returns>
-        public static insertResponse NewServer(NetworkCredential Credential, insert Server)
+        public static insertResponse NewServer(NetworkCredential Credential, insert Server, string ServiceNowUrl)
         {
             try
             {
                 string userName = Credential.UserName;
                 string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(userName, userPass, ServiceNowUrl);
 
                 insertResponse response = new insertResponse();
 
@@ -38,13 +39,13 @@
         /// <param name="Credential">A NetworkCredential object that gets passed to the soap client for authentication</param>
         /// <param name="Server">A getRecrods object that contains the data to be retreived from ServiceNOW</param>
         /// <returns>A getRecordsResponseGetRecordsResult array of server(s)</returns>
-        public static getRecordsResponseGetRecordsResult[] GetServer(NetworkCredential Credential, getRecords Server)
+        public static getRecordsResponseGetRecordsResult[] GetServer(NetworkCredential Credential, getRecords Server, string ServiceNowUrl)
         {
             try
             {
                 string userName = Credential.UserName;
                 string userPass = Credential.Password;
-                ServiceNowSoapClient client = soapClient(userName, userPass);
+                ServiceNowSoapClient client = soapClient(userName, userPass, ServiceNowUrl);
 
                 getRecordsResponseGetRecordsResult[] result = client.getRecords(Server);
 
@@ -95,13 +96,15 @@
         /// <param name="UserName">The API Username</param>
         /// <param name="Password">The API Password</param>
         /// <returns>A ServiceNow SoapClient object</returns>
-        private static ServiceNowSoapClient soapClient(string UserName, string Password)
+        private static ServiceNowSoapClient soapClient(string UserName, string Password, string ServiceNowUrl)
         {
             try
             {
-                ServiceNowSoapClient soapClient = new ServiceNowSoapClient();
+                EndpointAddress endpoint = new EndpointAddress(new Uri(ServiceNowUrl));
+                ServiceNowSoapClient soapClient = new ServiceNowSoapClient("ServiceNowSoap", endpoint);
                 soapClient.ClientCredentials.UserName.UserName = UserName;
                 soapClient.ClientCredentials.UserName.Password = Password;
+
                 return soapClient;
             }
             catch (Exception ex)
