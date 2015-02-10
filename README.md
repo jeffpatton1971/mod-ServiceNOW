@@ -26,3 +26,6 @@ Add the following code to your app/web.config files immediately before your endp
       </basicHttpBinding>
     </bindings>
 ```
+Please see the Demo app's app.config for example usage.
+
+https://github.com/jeffpatton1971/mod-ServiceNOW/blob/master/Demo/App.config
