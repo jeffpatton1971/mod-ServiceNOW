@@ -40,6 +40,12 @@ namespace Demo
             SetConfig setConfig = new SetConfig();
             setConfig.Visible = true;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GetGroup getGroup = new GetGroup();
+            getGroup.Visible = true;
+        }
     }
     public static class snConfig
     {

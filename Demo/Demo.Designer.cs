@@ -36,6 +36,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmdSetConfig = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +116,32 @@
             this.cmdSetConfig.UseVisualStyleBackColor = true;
             this.cmdSetConfig.Click += new System.EventHandler(this.cmdSetConfig_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 177);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "An example to get groups";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(12, 193);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Get Group";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 183);
+            this.ClientSize = new System.Drawing.Size(244, 226);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cmdSetConfig);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
@@ -148,6 +171,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button cmdSetConfig;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button4;
     }
 }
 

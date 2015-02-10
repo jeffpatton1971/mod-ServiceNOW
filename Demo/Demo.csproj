@@ -74,6 +74,12 @@
     <Compile Include="Demo.Designer.cs">
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetGroup.Designer.cs">
+      <DependentUpon>GetGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GetIncident.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetGroup.resx">
+      <DependentUpon>GetGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GetIncident.resx">
       <DependentUpon>GetIncident.cs</DependentUpon>
@@ -153,6 +162,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\group\group.csproj">
+      <Project>{c5430920-fe52-40a9-bb2d-f0aa81f5e825}</Project>
+      <Name>group</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
