@@ -7,6 +7,7 @@ You will need to copy the system.ServiceModel section of the app.config into eit
 
 Add the following code to your app/web.config files immediately before your endpoint declarations.
 
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <system.serviceModel>
@@ -24,3 +25,4 @@ Add the following code to your app/web.config files immediately before your endp
         <binding name="ServiceNowSoap1" />
       </basicHttpBinding>
     </bindings>
+```
