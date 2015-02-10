@@ -23,8 +23,7 @@ namespace Demo
             Demo.snConfig.snSoapUser = txtUser.Text;
             Demo.snConfig.snSoapPass = txtPassword.Text;
 
-            SetConfig setConfig = new SetConfig();
-            setConfig.Close();
+            this.Close();
         }
     }
 }
