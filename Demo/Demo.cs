@@ -10,17 +10,6 @@ using System.Windows.Forms;
 
 namespace Demo
 {
-    public static class snConfig
-    {
-        public static string snInstance { get; set; }
-        public static string snSoapUser { get; set; }
-        public static string snSoapPass { get; set; }
-
-        public static string ServiceNOWUrl()
-        {
-            return "https://" + snInstance + ".service-now.com";
-        }
-    }
     public partial class frmMain : Form
     {
         public frmMain()
@@ -50,6 +39,23 @@ namespace Demo
         {
             SetConfig setConfig = new SetConfig();
             setConfig.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GetGroup getGroup = new GetGroup();
+            getGroup.Visible = true;
+        }
+    }
+    public static class snConfig
+    {
+        public static string snInstance { get; set; }
+        public static string snSoapUser { get; set; }
+        public static string snSoapPass { get; set; }
+
+        public static string ServiceNOWUrl()
+        {
+            return "https://" + snInstance + ".service-now.com";
         }
     }
 }
