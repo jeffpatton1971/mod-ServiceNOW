@@ -5,6 +5,22 @@ This is a C# wrapper for some of the functions available through the ServiceNOW 
 
 You will need to copy the system.ServiceModel section of the app.config into either your web.config for a website or app.config for an application.
 
-Use this version
+Add the following code to your app/web.config files immediately before your endpoint declarations.
 
-https://github.com/jeffpatton1971/mod-ServiceNOW/blob/2a696973b707e46efc90b3bc9ea3c2bf61d3ed45/ServiceNOW/app.config
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="ServiceNowSoap">
+          <security mode="Transport">
+            <transport clientCredentialType="Basic" proxyCredentialType="Basic"
+                realm="">
+              <extendedProtectionPolicy policyEnforcement="Never" />
+            </transport>
+            <message clientCredentialType="UserName" algorithmSuite="Default" />
+          </security>
+        </binding>
+        <binding name="ServiceNowSoap1" />
+      </basicHttpBinding>
+    </bindings>
