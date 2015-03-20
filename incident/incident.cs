@@ -64,7 +64,16 @@
             try
             {
                 EndpointAddress endpoint = new EndpointAddress(new Uri(ServiceNowUrl));
-                ServiceNowSoapClient soapClient = new ServiceNowSoapClient("ServiceNowSoap", endpoint);
+                WSHttpBinding binding = new WSHttpBinding();
+                
+                binding.Name = "ServiceNowSoap";
+                binding.MaxReceivedMessageSize = 65536;
+                binding.Security.Mode = SecurityMode.Transport;
+                binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
+                binding.Security.Transport.ProxyCredentialType = HttpProxyCredentialType.Basic;
+                binding.Security.Message.ClientCredentialType = MessageCredentialType.UserName;
+
+                ServiceNowSoapClient soapClient = new ServiceNowSoapClient(binding, endpoint);
                 soapClient.ClientCredentials.UserName.UserName = UserName;
                 soapClient.ClientCredentials.UserName.Password = Password;
 
